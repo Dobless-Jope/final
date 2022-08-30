@@ -105,20 +105,20 @@ def manager_data():
     if u3 == '':
         manager_inf.delete('1.0', END)
         
-    if u3 == 'Spartacus Edmundo':
-        with open("C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\Spartacus Edmundo.txt") as h:
+    if u3 == 'X':
+        with open("C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\X.txt") as h:
             m = h.read()
             manager_inf.delete('1.0', END)
             manager_inf.insert(END,m)
             
-    if u3 == 'Maram Balder':
-        with open("C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\Maram Balder.txt") as h:
+    if u3 == 'Y':
+        with open("C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\Y.txt") as h:
             m = h.read()
             manager_inf.delete('1.0', END)
             manager_inf.insert(END,m)
 
-    if u3 == 'Husam Mirosław':
-        with open("C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\Husam Mirosław.txt") as h:
+    if u3 == 'Z':
+        with open("C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\Z.txt") as h:
             m = h.read()
             manager_inf.delete('1.0', END)
             manager_inf.insert(END,m)
@@ -344,13 +344,13 @@ def inform():
 
     k = str(b + " "+","+"an user of our programm has an event that is to be managed by you." + " "+"The event is that of a" + " "+c+"."+" "+"They have a budget of" +
             " "+d+"."+" "+"The following event is to be held on"+" "+n+" "+"at"+" "+i+"."+" "+"The contact details of the following user is" + " " + j+".")
-    if e == 'Spartacus Edmundo':
+    if e == 'X':
         email_sender = 'test163773@gmail.com'
         email_password = 'sunlmdmrewkhcqpp'
 
         email_receiver = 'adhinbinoy7@gmail.com'
 
-        subject = 'New event order for Spartacus Edmundo'
+        subject = 'New event order for X'
         body = k
 
         em = EmailMessage()
@@ -368,17 +368,17 @@ def inform():
         t1.delete("1.0", END)
         t1.insert(END, "Mail has been sent")
 
-        with open('C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\Spartacus_Edmundo.csv', 'a+') as fh:
+        with open('C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\X.csv', 'a+') as fh:
             write = csv.writer(fh)
             write.writerow(z)
 
-    if e == 'Maram Balder':
+    if e == 'Y':
         email_sender = 'test163773@gmail.com'
         email_password = 'sunlmdmrewkhcqpp'
 
         email_receiver = 'adhin10v@gmail.com'
 
-        subject = 'New event order for Maram Balder'
+        subject = 'New event order for Y'
         body = k
 
         em = EmailMessage()
@@ -396,17 +396,17 @@ def inform():
         t1.delete("1.0", END)
         t1.insert(END, "Mail has been sent")
 
-        with open('C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\Maram_Balder.csv', 'a+') as fh:
+        with open('C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\Y.csv', 'a+') as fh:
             write = csv.writer(fh)
             write.writerow(z)
 
-    if e == 'Husam Mirosław':
+    if e == 'Z':
         email_sender = 'test163773@gmail.com'
         email_password = 'sunlmdmrewkhcqpp'
 
         email_receiver = 'doblessjope@gmail.com'
 
-        subject = 'New event order for Husam Mirosław'
+        subject = 'New event order for Z'
         body = k
 
         em = EmailMessage()
@@ -424,7 +424,7 @@ def inform():
         t1.delete("1.0", END)
         t1.insert(END, "Mail has been sent")
 
-        with open('C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\Husam_Mirosław.csv', 'a+') as fh:
+        with open('C:\\Users\\lenovo\\OneDrive\\Desktop\\Managers\\Z.csv', 'a+') as fh:
             write = csv.writer(fh)
             write.writerow(z)
 
@@ -497,8 +497,8 @@ def event_database():
     l7.grid(row=5, column=0)
 
     l7_entry = ttk.Combobox(f1, textvariable=manager, width=22, state='readonly')
-    l7_entry["values"] = ("", "Spartacus Edmundo",
-      "Maram Balder", "Husam Mirosław")
+    l7_entry["values"] = ("", "X",
+      "Y", "Z")
     l7_entry.grid(row=5, column=1)
 
     l8 = Label(f1, text='Date of the event(dd/mm/yy)', font=(
@@ -577,8 +577,8 @@ def managers():
     
     b = ttk.Combobox(screen6, font=("times new roman", 12, "bold"), width=33,
                      state='readonly', textvariable=name_of_manager)
-    b["values"] = ("", "Spartacus Edmundo",
-                   "Maram Balder", "Husam Mirosław")
+    b["values"] = ("", "X",
+                   "Y", "Z")
     b.place(x=200, y=10)
     
     c = Button(screen6, text="Enter", width=20,command=manager_data)
@@ -944,3 +944,4 @@ Label(text="").pack()
 Button(text="Register", height="2", width="30",command=register).pack()
 
 screen.mainloop()
+
